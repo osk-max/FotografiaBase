@@ -25,6 +25,10 @@ body {
   transition: 0.3s ease all;
 }
 
+body.dark {
+  background-color: var(--negro);
+}
+
 a {
   color: #222222;
   text-decoration: none;
@@ -57,6 +61,19 @@ nav {
   box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
 }
 
+body.dark nav {
+  background-color: var(--grisOscuro);
+  box-shadow: var(--sombraLight);
+}
+
+body.dark nav a {
+  color: var(--blanco);
+}
+
+body.dark nav a:hover {
+  color: var(--grisClaroHover);
+}
+
 nav .logotipo {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -77,6 +94,50 @@ nav .enlaces a {
 
 nav .enlaces a:hover {
   color: #707070;
+}
+
+/* Boton switch */
+.switch {
+  background-color: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active {
+  background-color: orange;
+}
+
+.switch.active:after {
+  left: unset;
+  right: 0;
+}
+
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background-color: none;
+  color: var(--blanco);
 }
 
 .grid {
@@ -105,6 +166,10 @@ nav .enlaces a:hover {
   margin-top: 50px;
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
+}
+
+body.dark .grid .card {
+  background-color: var(--grisOscuro);
 }
 
 .grid .card img {
